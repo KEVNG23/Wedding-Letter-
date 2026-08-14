@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+  --burgundy: #461c22;
+  --burgundy-deep: #351218;
+  --burgundy-soft: #5a2730;
+  --cream: #faf1dc;
+  --cream-dim: #efe2c8;
+  --gold: #91805a;
+  --gold-bright: #a8894f;
+  --ink: #3f2a1e;
+  --ink-soft: #6b5b45;
+
+  --background: var(--burgundy);
+  --foreground: var(--cream);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-burgundy: var(--burgundy);
+  --color-burgundy-deep: var(--burgundy-deep);
+  --color-burgundy-soft: var(--burgundy-soft);
+  --color-cream: var(--cream);
+  --color-cream-dim: var(--cream-dim);
+  --color-gold: var(--gold);
+  --color-gold-bright: var(--gold-bright);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+
+  --font-sans: var(--font-cormorant), "Times New Roman", serif;
+  --font-serif: var(--font-cormorant), "Times New Roman", serif;
+  --font-display: var(--font-playfair), "Didot", "Times New Roman", serif;
+  --font-script: var(--font-great-vibes), cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--burgundy);
+  color: var(--cream);
+  font-family: var(--font-cormorant), "Times New Roman", serif;
+  overflow-x: hidden;
+}
+
+.font-script {
+  font-family: var(--font-great-vibes), cursive;
+}
+
+.font-display {
+  font-family: var(--font-playfair), "Didot", "Times New Roman", serif;
+}
+
+.font-serif {
+  font-family: var(--font-cormorant), "Times New Roman", serif;
+}
+
+/* Hairline rule used above and below the date block on the details card. */
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--gold) 12%,
+    var(--gold) 88%,
+    transparent
+  );
+}
+
+::selection {
+  background: var(--gold-bright);
+  color: var(--cream);
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
