@@ -71,7 +71,7 @@ export function Hero() {
         {...rise(1.4)}
         className="absolute inset-x-0 bottom-8 flex flex-col items-center gap-2 text-[#5a2a2a]"
       >
-        <span className="font-serif text-[0.62rem] tracking-[0.22em] drop-shadow-[0_1px_8px_rgba(250,241,220,0.95)]">
+        <span className="font-serif text-[0.9rem] tracking-[0.18em] drop-shadow-[0_1px_8px_rgba(250,241,220,0.95)]">
           {invitation.heroScrollHint}
         </span>
         <motion.span
