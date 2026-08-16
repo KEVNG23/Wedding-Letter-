@@ -32,7 +32,7 @@ export function InvitationCard() {
               className="object-contain object-top drop-shadow-[0_10px_26px_rgba(22,6,9,0.28)]"
             />
 
-            <div className="absolute inset-x-[19%] top-[12%] text-center text-[#5a3a24]">
+            <div className="absolute inset-x-[19%] top-[17%] text-center text-[#5a3a24]">
               <p className="font-display whitespace-pre-line text-[clamp(0.55rem,2vw,0.74rem)] leading-[1.55] tracking-[0.14em]">
                 {invitation.cardTitle}
               </p>
