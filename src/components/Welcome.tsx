@@ -10,9 +10,9 @@ export function Welcome() {
           <div className="relative w-[70%] max-w-[320px] -rotate-[5deg] drop-shadow-[0_26px_50px_rgba(24,6,10,0.55)] sm:w-[62%] md:w-full">
             <Image
               src="/assets/couple-polaroid.png"
-              alt="Annie và Dũng thuở nhỏ"
-              width={699}
-              height={799}
+              alt="Dũng và Tuyền thuở nhỏ"
+              width={907}
+              height={1024}
               sizes="(max-width: 768px) 60vw, 320px"
               className="h-auto w-full"
             />

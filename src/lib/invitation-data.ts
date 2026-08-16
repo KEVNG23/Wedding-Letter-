@@ -20,7 +20,7 @@ export const invitation = {
   welcomeHeading: "FRIENDS AND FAMILY",
   welcomeBody:
     "We are so excited to celebrate this special moment in our lives with our closest family and friends. As we count down to our big day. We can't wait to celebrate with you all!!",
-  welcomeSignature: "Annie & Dũng",
+  welcomeSignature: "Dũng & Tuyền",
 
   // ------------------------------------------------------- invitation card
   cardTitle: "LỄ THÀNH HÔN",
