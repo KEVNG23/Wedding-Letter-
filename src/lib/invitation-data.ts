@@ -9,8 +9,6 @@ export const invitation = {
   brideFirst: "TUYỀN",
   groomFirst: "DŨNG",
   brideFull: "Nguyễn Thị Thanh Tuyền (Annie)",
-  brideName: "Nguyễn Thị Thanh Tuyền",
-  brideNickname: "(Annie)",
   groomFull: "Nguyễn Trí Dũng",
   monogram: { left: "D", right: "T" },
 
