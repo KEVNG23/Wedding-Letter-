@@ -24,7 +24,7 @@ export const invitation = {
   welcomeSignature: "Dũng & Tuyền",
 
   // ------------------------------------------------------- invitation card
-  cardTitle: "LỄ THÀNH HÔN",
+  cardTitle: "LỄ ĐÍNH HÔN\n&\nLỄ THÀNH HÔN",
 
   // --------------------------------------------------------------- the day
   theDayTitle: "THE DAY",

@@ -3,11 +3,11 @@ import { displayFont, scriptFont, serifFont } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Lễ Thành Hôn — Dũng & Tuyền",
+  title: "Lễ Đính Hôn & Lễ Thành Hôn — Dũng & Tuyền",
   description:
-    "Thiệp mời lễ thành hôn của Nguyễn Thị Thanh Tuyền (Annie) & Nguyễn Trí Dũng — Chủ Nhật 17.01.2027",
+    "Thiệp mời lễ đính hôn & lễ thành hôn của Nguyễn Trí Dũng & Nguyễn Thị Thanh Tuyền (Annie) — Chủ Nhật 17.01.2027",
   openGraph: {
-    title: "Lễ Thành Hôn — Dũng & Tuyền",
+    title: "Lễ Đính Hôn & Lễ Thành Hôn — Dũng & Tuyền",
     description: "Chủ Nhật 17.01.2027 — Trân trọng kính mời",
     type: "website",
   },

@@ -12,10 +12,10 @@ export function SiteFooter() {
         </p>
 
         <p className="mt-6 text-[0.7rem] tracking-[0.3em] text-[#c9ab8a] uppercase">
-          {invitation.brideFull}
+          {invitation.groomFull}
         </p>
         <p className="mt-1 text-[0.7rem] tracking-[0.3em] text-[#c9ab8a] uppercase">
-          {invitation.groomFull}
+          {invitation.brideFull}
         </p>
 
         <p className="mt-8 text-[0.68rem] tracking-[0.32em] text-[#a98a72] uppercase">
