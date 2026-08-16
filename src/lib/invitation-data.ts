@@ -5,8 +5,8 @@
 
 export const invitation = {
   // ---------------------------------------------------------------- couple
-  coupleShort: "Annie & Dũng",
-  brideFirst: "ANNIE",
+  coupleShort: "Dũng & Tuyền",
+  brideFirst: "TUYỀN",
   groomFirst: "DŨNG",
   brideFull: "Nguyễn Thị Thanh Tuyền (Annie)",
   groomFull: "Nguyễn Trí Dũng",
@@ -15,6 +15,7 @@ export const invitation = {
   // ------------------------------------------------------------------ hero
   heroJoiner: "and",
   heroTagline: "are getting married",
+  heroScrollHint: "Scroll down for details",
 
   // --------------------------------------------------------------- welcome
   welcomeHeading: "FRIENDS AND FAMILY",

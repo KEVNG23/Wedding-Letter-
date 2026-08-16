@@ -42,7 +42,7 @@ export function Hero() {
           {...rise(0.25)}
           className="font-serif text-[clamp(2.8rem,12vw,7.5rem)] leading-[0.95] font-light tracking-[0.14em] text-[#4a1d24] drop-shadow-[0_1px_18px_rgba(250,241,220,0.95)]"
         >
-          {invitation.brideFirst}
+          {invitation.groomFirst}
         </motion.h1>
 
         <motion.span
@@ -56,7 +56,7 @@ export function Hero() {
           {...rise(0.6)}
           className="font-serif text-[clamp(2.8rem,12vw,7.5rem)] leading-[0.95] font-light tracking-[0.14em] text-[#4a1d24] drop-shadow-[0_1px_18px_rgba(250,241,220,0.95)]"
         >
-          {invitation.groomFirst}
+          {invitation.brideFirst}
         </motion.h1>
 
         <motion.p
@@ -71,8 +71,8 @@ export function Hero() {
         {...rise(1.4)}
         className="absolute inset-x-0 bottom-8 flex flex-col items-center gap-2 text-[#5a2a2a]"
       >
-        <span className="font-serif text-[0.62rem] tracking-[0.42em] uppercase drop-shadow-[0_1px_8px_rgba(250,241,220,0.95)]">
-          Cuộn xuống
+        <span className="font-serif text-[0.62rem] tracking-[0.22em] drop-shadow-[0_1px_8px_rgba(250,241,220,0.95)]">
+          {invitation.heroScrollHint}
         </span>
         <motion.span
           aria-hidden
