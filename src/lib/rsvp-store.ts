@@ -8,10 +8,11 @@ import type { Pool } from "pg";
 export type RsvpEntry = {
   id: string;
   name: string;
+  guestGroup: string;
   attending: boolean;
-  guests: number;
-  phone: string;
-  message: string;
+  companions: number;
+  allergy: string;
+  vegetarian: boolean;
   createdAt: string;
 };
 
@@ -41,13 +42,14 @@ async function getPool(): Promise<Pool> {
 
       await pool.query(`
         CREATE TABLE IF NOT EXISTS rsvp (
-          id         TEXT PRIMARY KEY,
-          name       TEXT NOT NULL,
-          attending  BOOLEAN NOT NULL,
-          guests     INTEGER NOT NULL DEFAULT 1,
-          phone      TEXT NOT NULL DEFAULT '',
-          message    TEXT NOT NULL DEFAULT '',
-          created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+          id           TEXT PRIMARY KEY,
+          name         TEXT NOT NULL,
+          guest_group  TEXT NOT NULL DEFAULT '',
+          attending    BOOLEAN NOT NULL,
+          companions   INTEGER NOT NULL DEFAULT 0,
+          allergy      TEXT NOT NULL DEFAULT '',
+          vegetarian   BOOLEAN NOT NULL DEFAULT false,
+          created_at   TIMESTAMPTZ NOT NULL DEFAULT NOW()
         )
       `);
 
@@ -78,15 +80,16 @@ export async function addRsvp(input: NewRsvp): Promise<RsvpEntry> {
   if (usePostgres) {
     const pool = await getPool();
     await pool.query(
-      `INSERT INTO rsvp (id, name, attending, guests, phone, message, created_at)
-       VALUES ($1, $2, $3, $4, $5, $6, $7)`,
+      `INSERT INTO rsvp (id, name, guest_group, attending, companions, allergy, vegetarian, created_at)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`,
       [
         entry.id,
         entry.name,
+        entry.guestGroup,
         entry.attending,
-        entry.guests,
-        entry.phone,
-        entry.message,
+        entry.companions,
+        entry.allergy,
+        entry.vegetarian,
         entry.createdAt,
       ],
     );
@@ -104,17 +107,18 @@ export async function listRsvps(): Promise<RsvpEntry[]> {
   if (usePostgres) {
     const pool = await getPool();
     const { rows } = await pool.query(
-      `SELECT id, name, attending, guests, phone, message, created_at
+      `SELECT id, name, guest_group, attending, companions, allergy, vegetarian, created_at
        FROM rsvp ORDER BY created_at DESC`,
     );
 
     return rows.map((r) => ({
       id: r.id as string,
       name: r.name as string,
+      guestGroup: r.guest_group as string,
       attending: r.attending as boolean,
-      guests: r.guests as number,
-      phone: r.phone as string,
-      message: r.message as string,
+      companions: r.companions as number,
+      allergy: r.allergy as string,
+      vegetarian: r.vegetarian as boolean,
       createdAt: new Date(r.created_at as string | Date).toISOString(),
     }));
   }
@@ -131,6 +135,6 @@ export function summarise(entries: RsvpEntry[]) {
     responses: entries.length,
     attending: attending.length,
     declined: declined.length,
-    headcount: attending.reduce((sum, e) => sum + (e.guests || 1), 0),
+    headcount: attending.reduce((sum, e) => sum + (e.companions || 0) + 1, 0),
   };
 }

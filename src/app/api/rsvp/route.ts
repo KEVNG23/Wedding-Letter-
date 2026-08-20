@@ -22,22 +22,30 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "name_required" }, { status: 400 });
   }
 
+  const guestGroup = clean(body.guestGroup, 200);
+  if (!guestGroup) {
+    return NextResponse.json({ error: "guest_group_required" }, { status: 400 });
+  }
+
   if (typeof body.attending !== "boolean") {
     return NextResponse.json({ error: "attending_required" }, { status: 400 });
   }
 
-  const rawGuests = Number(body.guests);
-  const guests = body.attending
-    ? Math.min(Math.max(Number.isFinite(rawGuests) ? Math.trunc(rawGuests) : 1, 1), 20)
-    : 0;
+  if (typeof body.vegetarian !== "boolean") {
+    return NextResponse.json({ error: "vegetarian_required" }, { status: 400 });
+  }
+
+  const rawCompanions = Number(body.companions);
+  const companions = Number.isFinite(rawCompanions) ? Math.max(Math.trunc(rawCompanions), 0) : 0;
 
   try {
     await addRsvp({
       name,
+      guestGroup,
       attending: body.attending,
-      guests,
-      phone: clean(body.phone, 40),
-      message: clean(body.message, 1000),
+      companions,
+      allergy: clean(body.allergy, 500),
+      vegetarian: body.vegetarian,
     });
   } catch (error) {
     console.error("Failed to save RSVP", error);

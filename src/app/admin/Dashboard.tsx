@@ -28,15 +28,16 @@ function toCsv(entries: RsvpEntry[]): string {
   const escape = (v: string | number | boolean) =>
     `"${String(v).replace(/"/g, '""')}"`;
 
-  const header = ["Tên", "Tham dự", "Số người", "Điện thoại", "Lời chúc", "Thời gian"];
+  const header = ["Tên", "Nhóm khách", "Tham dự", "Số người đi cùng", "Dị ứng", "Ăn chay", "Thời gian"];
 
   const rows = entries.map((e) =>
     [
       e.name,
+      e.guestGroup,
       e.attending ? "Có" : "Không",
-      e.guests,
-      e.phone,
-      e.message,
+      e.companions,
+      e.allergy,
+      e.vegetarian ? "Có" : "Không",
       e.createdAt,
     ]
       .map(escape)
@@ -168,17 +169,31 @@ export function Dashboard({ entries, summary }: Props) {
                     entry.attending ? "text-[#a7c9a0]" : "text-[#d99a9a]"
                   }`}
                 >
-                  {entry.attending ? `Sẽ đến · ${entry.guests} người` : "Không đến"}
+                  {entry.attending ? `Sẽ đến · ${entry.companions + 1} người` : "Không đến"}
                 </span>
               </div>
 
-              {entry.phone && (
-                <p className="mt-1 text-[0.85rem] text-[#c9ab8a]">{entry.phone}</p>
+              {entry.guestGroup && (
+                <p className="mt-1 text-[0.85rem] text-[#c9ab8a]">
+                  <span className="text-[#a98a72]">Nhóm:</span> {entry.guestGroup}
+                </p>
               )}
 
-              {entry.message && (
-                <p className="mt-2 text-[1rem] leading-relaxed text-[#e0c9a8] italic">
-                  “{entry.message}”
+              {entry.companions > 0 && (
+                <p className="mt-1 text-[0.85rem] text-[#c9ab8a]">
+                  <span className="text-[#a98a72]">Số người đi cùng:</span> {entry.companions}
+                </p>
+              )}
+
+              {entry.allergy && (
+                <p className="mt-1 text-[0.85rem] text-[#e8b8a0]">
+                  <span className="text-[#d99a9a]">Dị ứng:</span> {entry.allergy}
+                </p>
+              )}
+
+              {entry.vegetarian && (
+                <p className="mt-1 text-[0.85rem] text-[#a7c9a0]">
+                  Ăn chay trường
                 </p>
               )}
 
