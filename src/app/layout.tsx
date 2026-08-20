@@ -29,6 +29,23 @@ export default function RootLayout({
       className={`${serifFont.variable} ${displayFont.variable} ${scriptFont.variable}`}
       suppressHydrationWarning
     >
+      <head>
+        <link
+          rel="preload"
+          href="/assets/saigon-blur.jpg"
+          as="image"
+          type="image/jpeg"
+          fetchPriority="high"
+        />
+        <link
+          rel="preload"
+          href="/assets/couple-polaroid.png"
+          as="image"
+          type="image/png"
+        />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+      </head>
       <body className="antialiased" suppressHydrationWarning>
         {children}
       </body>

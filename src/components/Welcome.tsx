@@ -13,8 +13,12 @@ export function Welcome() {
               alt="Dũng và Tuyền thuở nhỏ"
               width={907}
               height={1024}
+              quality={90}
               sizes="(max-width: 768px) 60vw, 320px"
               className="h-auto w-full"
+              loading="eager"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAALCAYAAABGbhwYAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAYklEQVQYlY2PwQ3AIAwDz0aVGIA1ug+dLv2n7dOKBxJSLEtnGUAAqooiAgCICGMMdBfduTsAQFVRVUQEdx/uvufu4e4AQETAzGBmMDOqCt09IgIRQUQgIlBVVBVmhrv/wPsBJzYg8Tv1d+sAAAAASUVORK5CYII="
             />
           </div>
         </Reveal>
@@ -43,8 +47,10 @@ export function Welcome() {
                 alt=""
                 width={800}
                 height={655}
+                quality={85}
                 sizes="220px"
                 className="pointer-events-none h-auto w-[180px] opacity-70 sm:w-[200px]"
+                loading="lazy"
               />
             </div>
           </Reveal>

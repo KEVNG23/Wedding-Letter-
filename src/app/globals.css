@@ -37,6 +37,9 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -44,6 +47,7 @@ body {
   color: var(--cream);
   font-family: var(--font-cormorant), "Times New Roman", serif;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 .font-script {
@@ -56,6 +60,11 @@ body {
 
 .font-serif {
   font-family: var(--font-cormorant), "Times New Roman", serif;
+}
+
+/* Ensure images load with proper aspect ratios to prevent layout shifts */
+img {
+  content-visibility: auto;
 }
 
 /* Hairline rule used above and below the date block on the details card. */

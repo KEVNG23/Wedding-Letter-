@@ -17,8 +17,12 @@ export function InvitationCard() {
               src="/assets/envelope-open.png"
               alt=""
               fill
+              quality={90}
               sizes="(max-width: 480px) 90vw, 420px"
               className="object-contain object-top"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAMCAYAAABbayygAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAUElEQVQYlY2QQQ6AIAwE+f+fdxMvxoMnE1N1l4QDJm3StjsA7A4RQQAYGWBmAEBEAACqCiKCiKC7u7uoKiICM0NVMTNERJgZIgIiwsz/AN8F8eMg9vKUFEwAAAAASUVORK5CYII="
             />
           </div>
 
@@ -28,8 +32,12 @@ export function InvitationCard() {
               alt=""
               fill
               priority={false}
+              quality={90}
               sizes="(max-width: 480px) 90vw, 420px"
               className="object-contain object-top drop-shadow-[0_10px_26px_rgba(22,6,9,0.28)]"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAANCAYAAACQN/8FAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAWklEQVQYlZWQQQ6AMAhE+d+f95beOonxYqJNp6uLJoRXGGYAsLuICAPIzAAA3R0AYGYgInR3mBnuDjODmeHuEBGYGe4OEYGZQURERESICGYGM0NEYGZ/AN8DjAQlAKCw2hYAAAAASUVORK5CYII="
             />
 
             <div className="absolute inset-x-[19%] top-[17%] text-center text-[#5a3a24]">

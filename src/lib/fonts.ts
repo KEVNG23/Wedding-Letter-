@@ -2,24 +2,30 @@ import { Cormorant_Garamond, Great_Vibes, Playfair_Display } from "next/font/goo
 
 export const serifFont = Cormorant_Garamond({
   variable: "--font-cormorant",
-  subsets: ["latin", "latin-ext", "vietnamese"],
-  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["vietnamese"],
+  weight: ["300", "400"],
   display: "swap",
   preload: true,
+  fallback: ["Georgia", "serif"],
+  adjustFontFallback: true,
 });
 
 export const displayFont = Playfair_Display({
   variable: "--font-playfair",
-  subsets: ["latin", "latin-ext", "vietnamese"],
-  weight: ["400", "500", "600"],
+  subsets: ["vietnamese"],
+  weight: ["400", "600"],
   display: "swap",
   preload: true,
+  fallback: ["Georgia", "serif"],
+  adjustFontFallback: true,
 });
 
 export const scriptFont = Great_Vibes({
   variable: "--font-great-vibes",
-  subsets: ["latin", "latin-ext", "vietnamese"],
+  subsets: ["latin"],
   weight: "400",
   display: "swap",
   preload: true,
+  fallback: ["cursive"],
+  adjustFontFallback: true,
 });
